@@ -1,0 +1,18 @@
+<h3>Periferico: <%= periferico.nome %></h3>
+
+<% if action_name == 'show' %>
+  <p>Preço: <%= periferico.price %></p>
+  <p>Cor: <%= periferico.color %></p>
+  
+  <% if @periferico.rgb %>
+  <p>RGB: Sim</p>
+  <% else %>
+    <p>RGB: Não</p>
+  <% end %>
+  <%= link_to 'Back', root_path %>
+<% end %>
+
+<%= link_to 'Detalhes', periferico %>
+<%= link_to 'Editar', edit_periferico_path(periferico) %>
+<%= link_to 'Deletar', periferico, method: :delete, data: { turbo_method: :delete , turbo_confirm: 'Você tem certeza?' } %>
+<hr>    

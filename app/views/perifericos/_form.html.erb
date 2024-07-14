@@ -1,0 +1,32 @@
+<%= form_with(model: @periferico, data: { turbo: false } ) do |form| %>
+
+  <%= render 'shared/errors', object: @periferico %>
+  
+  <div class="label">
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+  
+  <div class="label">
+    <%= form.label :price %>
+    <%= form.text_area :price %>
+  </div>
+
+   <div class="label">
+    <%= form.label :color %>
+    <%= form.text_area :color %>
+  </div>
+
+  <div class="label">
+    <h4>Tem RGB?</h4>
+    <%= form.label :rgb %>
+    <%= form.check_box :rgb %>
+  </div>
+
+  <div class="button">
+    <%= form.submit %>
+  </div>
+  
+<% end %>
+
+<%= link_to 'Back', root_path %>
